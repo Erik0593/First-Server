@@ -44,3 +44,43 @@ server.listen(8080, () => {
 // POST /koders -> crear un koders
 // DELETE /koders/123(iD) -> eliminar un koders
 
+
+
+
+
+/********************* Tarea de este ejercicio  *****************/
+// sin metodo if
+const http = require('http')
+
+const server = http.createServer((request, response) => {
+  console.log('method: ', request.method)
+  console.log('url: ', request.url)
+
+  // GET /hola -> hola mundo
+  // POST /hola -> aqui puedes crear un recurso
+  // DELETE /hola -> aqui puedes borrar un recurso
+  // GET /adios -> adios :c
+
+  const respuestas = {
+    'GET': {
+      '/hola': 'hola mundo',
+      '/adios': 'adios :c'
+    },
+    'POST': {
+      '/hola': 'aqui puedes crear un recurso'
+    },
+    'DELETE': {
+      '/hola': 'aqui puedes borrar un recurso'
+    }
+  }
+
+  const { method, url } = request
+
+  const texto = respuestas[method][url]
+  response.write(texto)
+  response.end()
+})
+
+server.listen(8080, () => {
+  console.log('Server listening')
+})
