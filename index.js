@@ -14,15 +14,20 @@ const server = http.createServer((request, response) => {
 
     if(request.method === 'GET' && request.url === '/hola'){
         response.write('Hola mundo')
-    }else if(request.method === 'POST' && request.url === '/hola'){
+    }
+    if(request.method === 'POST' && request.url === '/hola'){
         response.write('Aqui puedes crear un recurso')
-    }else if(request.method === 'DELETE' && request.url === '/hola'){
+    }
+    if(request.method === 'DELETE' && request.url === '/hola'){
         response.write('Aqui puedes borrar un recurso')
-    }else if(request.method === 'PUT' && request.url === '/hola'){
+    }
+    if(request.method === 'PUT' && request.url === '/hola'){
         response.write('Aqui puedes reemplazar un recurso')
-    }else if(request.method === 'PATCH' && request.url === '/hola'){
+    }
+    if(request.method === 'PATCH' && request.url === '/hola'){
         response.write('Aqui puedes actualizar un recurso')
-    }else if(request.method === 'GET' && request.url === '/adios'){
+    }
+    if(request.method === 'GET' && request.url === '/adios'){
         response.write('Saquese perro cochino')
     }
 
